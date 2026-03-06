@@ -7,6 +7,11 @@ import {
 import './index.css'
 import MainLay from './MainLay/Mainlay';
 import Home from './Pages/Home/Home';
+import AllTouristsSpot from './Pages/AllTouristsSpot/AllTouristsSpot';
+import AddTouristsSpot from './Pages/AddTouristsSpot/AddTouristsSpot';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import MyList from './Pages/MyList/MyList';
 
 
 const router = createBrowserRouter([
@@ -17,6 +22,26 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/allTouristSpot',
+        element: <AllTouristsSpot />
+      },
+      {
+        path: '/addTouristSpot',
+        element: <AddTouristsSpot />
+      },
+      {
+        path: '/myList',
+        element: <MyList />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
       }
     ]
   },
