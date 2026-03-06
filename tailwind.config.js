@@ -5,8 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+     fontFamily :{
+        publicSans: ["Public Sans", "sans-serif"] ,
+        changaOne: ["Changa One", "sans -serif"]
+     }
+    },
   },
-  plugins: [],
+  // eslint-disable-next-line no-undef
+  plugins: [require('daisyui')],
 }
 
