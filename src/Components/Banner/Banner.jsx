@@ -10,7 +10,7 @@ export default function App() {
    <Swiper
     cssMode={true}
     // navigation={true}
-    pagination={true}
+    // pagination={true}
     mousewheel={true}
     autoplay={{
      delay: 2500,

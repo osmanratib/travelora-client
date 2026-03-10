@@ -41,16 +41,16 @@ const Navbar = () => {
      </a>
     </div>
     <div className="navbar-center hidden lg:flex">
-     <ul className='flex gap-7 font-publicSans font-semibold text-[14px] ' >
+     <ul className='flex gap-7 font-publicSans font-light capitalize  text-[13px] ' >
       <Link to={'/'} ><li>Home</li></Link>
       <Link to={'/allTouristSpot'} ><li>All Tourists Spot</li></Link>
       <Link to={'/addTouristSpot'}><li>Add Tourists Spot</li></Link>
       <Link to={'/myList'}>my list</Link>
      </ul>
     </div>
-    <div className="navbar-end hidden font-publicSans lg:flex gap-4">
-     <Link className='bg-primary-0 text-white px-8 py-2 rounded-xl' to={'/login'}> <a >Login</a></Link>
-     <Link className='bg-primary-0 text-white px-8 py-2 rounded-xl' to={'/Register'}> <a >Register</a></Link>
+    <div className="navbar-end hidden font-publicSans lg:flex gap-4 text-[13px] capitalize">
+     <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/login'}> <a >Login</a></Link>
+     <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/Register'}> <a >Register</a></Link>
     </div>
    </div>
   </div>
