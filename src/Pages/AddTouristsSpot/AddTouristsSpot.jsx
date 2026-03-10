@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddTouristsSpot = () => {
 
@@ -30,10 +31,20 @@ const AddTouristsSpot = () => {
   })
    .then(res => res.json())
    .then(data => {
-    console.log(data);
-   })
+    console.log(data)
+    if (data.insertedId) {
+     Swal.fire("Your Form Is Submitted");
+     form.reset();
 
-  console.log(user);
+    }
+    else {
+     Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+     });
+    }
+   })
  }
 
 
@@ -45,53 +56,53 @@ const AddTouristsSpot = () => {
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Photo Url : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter photo URL' name='image' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter photo URL' name='image' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Tourist Spot Name : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter tourist spot name' name='touristSpotName' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter tourist spot name' name='touristSpotName' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Country Name : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter country name' name='country' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter country name' name='country' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Location : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter location' name='location' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter location' name='location' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Short Description : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter short description' name='description' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter short description' name='description' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Average Cost : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter average cost' name='averageCost' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter average cost' name='averageCost' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Seasonality : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter best season to visit' name='seasonality' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter best season to visit' name='seasonality' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Travel Time : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter travel time' name='travelTime' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter travel time' name='travelTime' />
      </div>
 
      <div>
       <h1 className='text-[20px] font-publicSans font-bold ' >Total Visitors Per Year : </h1>
-      <input className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter yearly visitor count' name='totalVisitorsPerYear' />
+      <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter yearly visitor count' name='totalVisitorsPerYear' />
      </div>
 
     </div>
 
     <button className='flex justify-center w-full cursor-pointer' >
-     <input type="text" className='bg-primary-0 text-white w-[1300px] h-[50px] text-center py-2 rounded-md font-bold font-publicSans uppercase m-6 cursor-pointer select-none ' value={"Add tourist Spot"} />
+     <input type="submit" className='bg-primary-0 text-white w-[1300px] h-[50px] text-center py-2 rounded-md font-bold font-publicSans uppercase m-6 cursor-pointer select-none ' value={"Add tourist Spot"} />
     </button>
    </form>
 
