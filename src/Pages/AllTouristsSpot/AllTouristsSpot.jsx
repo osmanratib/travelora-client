@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const AllTouristsSpot = () => {
      const placeData = useLoaderData();
@@ -10,8 +10,8 @@ const AllTouristsSpot = () => {
                     <div className="leftSide h-screen bg-primary-0 w-[400px]">
                          <h1 className='text-center  text-[20px] m-12 text-white font-changaOne ' >Find Your Favorite Place</h1>
                     </div>
-                    <div className={`rightSide ${placeData.length == 1 || placeData.length == 0 ? "h-screen" : "h-full"} bg-[#2c505ba9]`}>
-                         <div className='grid grid-cols-3 p-10' >
+                    <div className={`rightSide ${placeData.length <= 3 ? "h-screen" : "h-full"} bg-[#2c505ba9]`}>
+                         <div className='grid grid-cols-3 gap-5 p-10' >
                               {
                                    placeData.map(places => (
                                         <div key={placeData._id} >
@@ -40,10 +40,14 @@ const AllTouristsSpot = () => {
                                                        </h1>
 
                                                        <h1>
-                                                            <span className='font-publicSans font-extrabold text-[14px] capitalize ' >Best Time : </span> 
-                                                             {places.seasonality}
+                                                            <span className='font-publicSans font-extrabold text-[14px] capitalize ' >Best Time : </span>
+                                                            {places.seasonality}
                                                        </h1>
-                                                       <button className='bg-primary-0 px-5 py-2 rounded-lg text-white ' > place Details</button>
+                                                       <Link to={`/places/${places._id}`} >
+
+                                                            <button className='bg-primary-0 px-5 py-2 rounded-lg text-white ' > place Details</button>
+
+                                                       </Link>
                                                   </div>
                                              </div>
                                         </div>
