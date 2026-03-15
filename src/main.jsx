@@ -14,7 +14,6 @@ import Register from './Pages/Register/Register';
 import MyList from './Pages/MyList/MyList';
 import PlaceDetails from './Pages/PlaceDetails/PlaceDetails';
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,14 +37,7 @@ const router = createBrowserRouter([
         path: '/myList',
         element: <MyList />
       },
-      {
-        path: '/login',
-        element: <Login />
-      },
-      {
-        path: '/register',
-        element: <Register />
-      },
+
       {
         path: "/places/:id",
         element: <PlaceDetails />,
@@ -53,9 +45,15 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '/login',
+    element: <Login />
+  },
+  {
+    path: '/register',
+    element: <Register />
+  },
 ]);
-
-
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
