@@ -22,7 +22,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
+        loader: () => fetch('http://localhost:5000/places')
       },
       {
         path: '/allTouristSpot',
@@ -46,9 +47,9 @@ const router = createBrowserRouter([
         element: <Register />
       },
       {
-          path :"/places/:id" , 
-          element : <PlaceDetails/> ,
-        loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`) 
+        path: "/places/:id",
+        element: <PlaceDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
       }
     ]
   },
