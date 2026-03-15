@@ -49,8 +49,8 @@ const Navbar = () => {
      </ul>
     </div>
     <div className="navbar-end hidden font-publicSans lg:flex gap-4 text-[13px] capitalize">
-     <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/login'}> <a >Login</a></Link>
-     <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/Register'}> <a >Register</a></Link>
+     <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/login'}> Login</Link>
+     <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/Register'}> Register</Link>
     </div>
    </div>
   </div>

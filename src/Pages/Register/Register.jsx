@@ -50,7 +50,7 @@ const Register = () => {
      }
     )
     form.reset();
-    navigate('/')
+    navigate('/login')
    })
    .catch(error => {
     console.error(error)
@@ -65,12 +65,6 @@ const Register = () => {
    })
  }
 
-
- const testToast = () => {
-
- }
-
-
  return (
   <div className='p-5'>
    <Toaster
@@ -80,7 +74,7 @@ const Register = () => {
 
    <h1 className='text-center  text-[40px] m-2 text-primary-0 font-changaOne uppercase ' >Register</h1>
    <section className=' flex justify-center mt-5  '  >
-    <div className="w-[1000px] h-[600px] border bg-primary-0 rounded-xl flex justify-center gap-16 pt-16">
+    <div className="w-[1000px] h-[600px] border bg-primary-0 rounded-xl flex justify-center gap-16 pt-16 items-center">
 
      <form onSubmit={handleForm} >
 
@@ -145,7 +139,6 @@ const Register = () => {
 
     </div>
 
-    <button onClick={testToast} >toast</button>
 
    </section>
   </div>
