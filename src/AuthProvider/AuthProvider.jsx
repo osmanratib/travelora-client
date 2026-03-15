@@ -1,10 +1,13 @@
-import React from 'react';
+import { createContext } from 'react';
+// eslint-disable-next-line react-refresh/only-export-components
+export const AuthContext = createContext();
 
-const AuthProvider = () => {
+const AuthProvider = ({ children }) => {
+
  return (
-  <div>
-   
-  </div>
+  <AuthContext.Provider >
+   {children}
+  </AuthContext.Provider>
  );
 };
 
