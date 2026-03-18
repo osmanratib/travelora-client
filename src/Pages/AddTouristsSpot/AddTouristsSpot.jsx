@@ -52,7 +52,7 @@ const AddTouristsSpot = () => {
 
 
   return (
-    <div>
+    <div className='h-screen' >
       <form onSubmit={handleForm}  >
 
         <h1 className='text-center  text-primary-0 font-changaOne text-[30px] mt-16' >Add Tourist Spots</h1>

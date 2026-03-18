@@ -45,9 +45,9 @@ const MyList = () => {
 
 
  return (
-  <div className="p-5 max-w-[1200px] mx-auto">
-   <h1 className="text-3xl font-bold mb-5">My Tourist Spots</h1>
-   <table className="w-full table-auto border-collapse border border-gray-500 text-center">
+  <div className="p-5 max-w-[1200px] mx-auto h-screen">
+     <h1 className='text-center  text-primary-0 font-changaOne text-[30px] m-5' >My tourist Spot</h1>
+   <table className="w-full  table-auto border-collapse border border-gray-500 text-center">
     <thead>
      <tr className="bg-gray-700 text-white">
       <th className="border px-4 py-2">Image</th>

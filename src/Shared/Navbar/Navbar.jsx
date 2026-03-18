@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
 import logo from '../../../public/Images/ Travelora.jpg'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaBars } from "react-icons/fa";
-
+import { TbHomeFilled } from "react-icons/tb";
+import { MdPlace } from "react-icons/md"; 
+import { CiViewList } from "react-icons/ci";
 
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
-  const navigate = useNavigate() ; 
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logOut()
@@ -59,10 +61,47 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className='flex gap-7 font-publicSans font-light capitalize  text-[13px] ' >
-            <Link to={'/'} ><li>Home</li></Link>
-            <Link to={'/allTouristSpot'} ><li>All Tourists Spot</li></Link>
-            <Link to={'/addTouristSpot'}><li>Add Tourists Spot</li></Link>
-            <Link to={'/myList'}>my list</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+               isActive ? "text-[#4963c9]" : "text-black"
+              }
+            >
+              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Home</li>
+
+            </NavLink>
+
+            <NavLink
+              to="/allTouristSpot"
+              className={({ isActive }) =>
+                isActive ? "text-[#4963c9]" : "text-black"
+              }
+            >
+              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <MdPlace/> Places</li>
+
+            </NavLink> 
+
+            <NavLink
+              to="/addTouristSpot"
+              className={({ isActive }) =>
+                isActive ? "text-[#4963c9]" : "text-black"
+              }
+            >
+              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Add places</li>
+
+            </NavLink> 
+
+            <NavLink
+              to="/myList"
+              className={({ isActive }) =>
+                isActive ? "text-[#4963c9]" : "text-black"
+              }
+            >
+              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <CiViewList/> My List</li>
+
+            </NavLink>
+
+
           </ul>
         </div>
 
