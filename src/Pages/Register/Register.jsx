@@ -29,12 +29,11 @@ const Register = () => {
    toast.error('Password Length Should Be At Least 6', {
     style: {
      backgroundColor: "#000",
-     color : '#fff'
+     color: '#fff'
     }
    });
    return;
   }
-
 
   createUser(email, password)
    .then(res => {
@@ -49,7 +48,7 @@ const Register = () => {
       },
      }
     )
-    form.reset();
+    form.reset()
     navigate('/login')
    })
    .catch(error => {
@@ -63,6 +62,9 @@ const Register = () => {
      }
     })
    })
+
+
+
  }
 
  return (

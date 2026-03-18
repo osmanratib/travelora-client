@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const AddTouristsSpot = () => {
 
-
+  const { user } = useContext(AuthContext)
   const handleForm = (event) => {
     event.preventDefault();
 
@@ -17,19 +18,19 @@ const AddTouristsSpot = () => {
     const seasonality = form.seasonality.value
     const travelTime = form.travelTime.value
     const totalVisitorsPerYear = form.totalVisitorsPerYear.value
-    const email = form.email.value
-    const username = form.username.value
+    const email = user?.email
+    const username = user?.displayName
 
     console.log(image, touristSpotName, country, location, description, averageCost, seasonality, travelTime, totalVisitorsPerYear, email, username);
 
-    const user = { image, touristSpotName, country, location, description, averageCost, seasonality, travelTime, totalVisitorsPerYear, email, username }
+    const spot = { image, touristSpotName, country, location, description, averageCost, seasonality, travelTime, totalVisitorsPerYear, email, username }
 
     fetch('http://localhost:5000/places', {
       method: "POST",
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(spot)
     })
       .then(res => res.json())
       .then(data => {
@@ -53,6 +54,7 @@ const AddTouristsSpot = () => {
   return (
     <div>
       <form onSubmit={handleForm}  >
+
         <h1 className='text-center  text-primary-0 font-changaOne text-[30px] mt-16' >Add Tourist Spots</h1>
         <div className='grid grid-cols-3 gap-6 bg-[#2c505ba9] rounded-xl border max-w-[1300px] mt-10 mx-auto p-5 justify-center3'>
 
@@ -101,15 +103,6 @@ const AddTouristsSpot = () => {
             <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter yearly visitor count' name='totalVisitorsPerYear' />
           </div>
 
-
-          <div>
-            <h1 className='text-[20px] font-publicSans font-bold text-white' >User Email : </h1>
-            <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="email" placeholder='Enter email' name='email' />
-          </div>
-          <div>
-            <h1 className='text-[20px] font-publicSans font-bold text-white' >User Name : </h1>
-            <input required className='w-[400px] h-[50px] border outline-none bg-[#010101b8] rounded-xl p-3 text-white' type="text" placeholder='Enter user name' name='username' />
-          </div>
         </div>
 
         <button className='flex justify-center w-full cursor-pointer' >

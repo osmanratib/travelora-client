@@ -14,6 +14,8 @@ import Register from './Pages/Register/Register';
 import MyList from './Pages/MyList/MyList';
 import PlaceDetails from './Pages/PlaceDetails/PlaceDetails';
 import AuthProvider from './AuthProvider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import UpdatePlaces from './Pages/UpdatePlaces/UpdatePlaces';
 
 const router = createBrowserRouter([
   {
@@ -32,16 +34,29 @@ const router = createBrowserRouter([
       },
       {
         path: '/addTouristSpot',
-        element: <AddTouristsSpot />
+        element: <PrivateRoute>
+          <AddTouristsSpot />
+        </PrivateRoute>
       },
       {
         path: '/myList',
-        element: <MyList />
+        element: <PrivateRoute>
+          <MyList />
+        </PrivateRoute>
+      },
+      {
+        path: '/updatePlace/:id',
+        element: <PrivateRoute>
+          <UpdatePlaces />
+        </PrivateRoute> ,
+        loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
       },
 
       {
-        path: "/places/:id",
-        element: <PlaceDetails />,
+        path: "places/:id",
+        element: <PrivateRoute>
+          <PlaceDetails />
+        </PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
       }
     ]
