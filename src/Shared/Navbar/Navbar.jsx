@@ -23,7 +23,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='max-w-[1000px] mx-auto  mt-1 ' >
+    <div className='max-w-[1000px] mx-auto  mt-1 text-white ' >
       <div className="navbar  ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -60,11 +60,11 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className='flex gap-7 font-publicSans font-light capitalize  text-[13px] ' >
+          <ul className='flex gap-7 t font-publicSans font-light capitalize  text-[13px] ' >
             <NavLink
               to="/"
               className={({ isActive }) =>
-               isActive ? "text-[#4963c9]" : "text-black"
+               isActive ? "text-[#4963c9]" : "text-white"
               }
             >
               <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Home</li>
@@ -74,7 +74,7 @@ const Navbar = () => {
             <NavLink
               to="/allTouristSpot"
               className={({ isActive }) =>
-                isActive ? "text-[#4963c9]" : "text-black"
+                isActive ? "text-[#4963c9]" : "text-white"
               }
             >
               <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <MdPlace/> Places</li>
@@ -84,7 +84,7 @@ const Navbar = () => {
             <NavLink
               to="/addTouristSpot"
               className={({ isActive }) =>
-                isActive ? "text-[#4963c9]" : "text-black"
+                isActive ? "text-[#4963c9]" : "text-white"
               }
             >
               <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Add places</li>
@@ -94,7 +94,7 @@ const Navbar = () => {
             <NavLink
               to="/myList"
               className={({ isActive }) =>
-                isActive ? "text-[#4963c9]" : "text-black"
+                isActive ? "text-[#4963c9]" : "text-white"
               }
             >
               <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <CiViewList/> My List</li>
@@ -120,8 +120,8 @@ const Navbar = () => {
               </div>
             ) : (
               <div className='flex gap-4' >
-                <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/login'}> Login</Link>
-                <Link className='bg-primary-0 text-white px-5 py-1 rounded-md' to={'/Register'}> Register</Link>
+                <Link className='bg-white text-black px-5 py-1 rounded-md' to={'/login'}> Login</Link>
+                <Link className='bg-white text-black px-5 py-1 rounded-md' to={'/Register'}> Register</Link>
               </div>
             )
           }

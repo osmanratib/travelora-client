@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
  return (
-  <footer className="footer sm:footer-horizontal  text-neutral-content p-10 bg-[#143449b7]">
+  <footer className="footer sm:footer-horizontal  text-neutral-content p-10 bg-[#000000b7]">
    <nav>
     <h6 className="footer-title font-changaOne">Travelora</h6>
     <a className="link link-hover">Branding</a>

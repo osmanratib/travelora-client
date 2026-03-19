@@ -41,7 +41,7 @@ const AddTouristsSpot = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-start py-10 bg-[#1b2a35]">
       <form onSubmit={handleForm} className="w-full max-w-[1300px] p-6 rounded-xl bg-[#2c505ba9] grid grid-cols-3 gap-6">
-        <h1 className='col-span-3 text-center text-primary-0 font-changaOne text-[30px]'>Add Tourist Spots</h1>
+        <h1 className='col-span-3 text-center text-white font-changaOne text-[30px]'>Add Tourist Spots</h1>
 
         <div className="flex flex-col">
           <label className='text-white font-bold text-[20px]'>Photo URL:</label>
@@ -89,7 +89,7 @@ const AddTouristsSpot = () => {
         </div>
 
         <div className="col-span-3 flex justify-center">
-          <button type="submit" className="bg-primary-0 text-white w-full max-w-[400px] py-3 rounded-md font-bold uppercase mt-6 hover:bg-primary-1 transition-colors">
+          <button type="submit" className="bg-white text-black w-full max-w-[400px] py-3 rounded-md font-bold uppercase btn mt-6 hover:bg-primary-1 transition-colors">
             Add Tourist Spot
           </button>
         </div>

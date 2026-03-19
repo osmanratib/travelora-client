@@ -37,7 +37,7 @@ const TouristSpots = () => {
 
   return (
     <div className='min-h-screen px-5 md:px-10 py-10 mt-11'>
-      <h1 className='text-center text-4xl font-changaOne uppercase md:text-6xl mb-12 font-bold text-white tracking-wide'>
+      <h1 className='text-center text-[25px] font-changaOne uppercase md:text-[28px] mb-12 font-bold text-white tracking-wide'>
         Tourist Spots
       </h1>
 

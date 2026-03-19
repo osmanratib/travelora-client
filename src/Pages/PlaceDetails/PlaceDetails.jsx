@@ -13,7 +13,7 @@ const PlaceDetails = () => {
  const { image, touristSpotName, country, location, description, averageCost, seasonality, travelTime, totalVisitorsPerYear } = placeDetails;
 
  return (
-  <div className='h-screen' >
+  <div>
 
    <Link to={'/allTouristSpot'} >
     <button className='btn ml-6 bg-primary-0 text-white font-publicSans' > <FaBackward /> Back</button>
@@ -27,14 +27,14 @@ const PlaceDetails = () => {
 
     <div className='space-y-6' >
 
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-3 items-center ' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center ' > <GiFireplace /> Place : </span>{touristSpotName}</h1>
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <FaFlag /> Country Name : </span>{country}</h1>
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <CiLocationArrow1 /> Location : </span>{location}</h1>
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-7 items-center' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex ' >About </span><span className='w-[400px]' >{description}</span></h1>
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <FaRegMoneyBillAlt /> Cost : </span>{averageCost}</h1>
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <TiWeatherCloudy /> Seasonality : </span>{seasonality}</h1>
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <MdAccessTimeFilled /> Best time to travel : </span>{travelTime}</h1>
-     <h1 className='text-[#0000009c] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#000] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <IoIosPeople /> Total people go there : </span>{totalVisitorsPerYear}</h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-3 items-center ' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center ' > <GiFireplace /> Place : </span>{touristSpotName}</h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <FaFlag /> Country Name : </span>{country}</h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <CiLocationArrow1 /> Location : </span>{location}</h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-7 items-center' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex ' >About </span><span className='w-[400px]' >{description}</span></h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <FaRegMoneyBillAlt /> Cost : </span>{averageCost}</h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <TiWeatherCloudy /> Seasonality : </span>{seasonality}</h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <MdAccessTimeFilled /> Best time to travel : </span>{travelTime}</h1>
+     <h1 className='text-[#fff] text-[16px] font-publicSans flex gap-3 items-center' ><span className='text-[#fff] text-[17px] font-publicSans font-extrabold uppercase flex gap-3 items-center' > <IoIosPeople /> Total people go there : </span>{totalVisitorsPerYear}</h1>
 
     </div>
 
