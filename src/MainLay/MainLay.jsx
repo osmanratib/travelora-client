@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
+import { Outlet } from 'react-router-dom';
+import Lenis from '@studio-freight/lenis';
 
 const MainLay = () => {
+
+ useEffect(() => {
+  const lenis = new Lenis({
+   smooth: true,
+   lerp: 0.1,
+   direction: 'vertical',
+  });
+
+  function raf(time) {
+   lenis.raf(time);
+   requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  return () => lenis.destroy();
+ }, []);
+
  return (
-  <div>
+  <div className="bg-primary-0 text-gray-900">
    <Navbar />
-   <div className='bg-primary-0' >
+
+   <main className="min-h-screen">
     <Outlet />
-   </div>
-   <div>
-    <Footer />
-   </div>
+   </main>
+
+   <Footer />
   </div>
  );
 };
+
 export default MainLay;
