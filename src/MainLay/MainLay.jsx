@@ -6,9 +6,11 @@ import Footer from '../Shared/Footer/Footer';
 const MainLay = () => {
  return (
   <div>
-   <Navbar/>
-   <Outlet/>
-   <div className='mt-5' >
+   <Navbar />
+   <div className='bg-primary-0' >
+    <Outlet />
+   </div>
+   <div>
     <Footer />
    </div>
   </div>

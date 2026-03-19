@@ -16,6 +16,7 @@ import PlaceDetails from './Pages/PlaceDetails/PlaceDetails';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdatePlaces from './Pages/UpdatePlaces/UpdatePlaces';
+import Countries from './Components/Countries/Countries';
 
 const router = createBrowserRouter([
   {
@@ -48,16 +49,19 @@ const router = createBrowserRouter([
         path: '/updatePlace/:id',
         element: <PrivateRoute>
           <UpdatePlaces />
-        </PrivateRoute> ,
+        </PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
       },
-
       {
         path: "places/:id",
         element: <PrivateRoute>
           <PlaceDetails />
         </PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`)
+      },
+      {
+        path: '/countries',
+        element: <Countries />
       }
     ]
   },

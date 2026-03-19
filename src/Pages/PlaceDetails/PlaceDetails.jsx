@@ -13,7 +13,7 @@ const PlaceDetails = () => {
  const { image, touristSpotName, country, location, description, averageCost, seasonality, travelTime, totalVisitorsPerYear } = placeDetails;
 
  return (
-  <div>
+  <div className='h-screen' >
 
    <Link to={'/allTouristSpot'} >
     <button className='btn ml-6 bg-primary-0 text-white font-publicSans' > <FaBackward /> Back</button>
