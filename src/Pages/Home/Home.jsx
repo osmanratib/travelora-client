@@ -4,6 +4,7 @@ import TouristSpots from '../../Components/TouristSpots/TouristSpots';
 import Countries from '../../Components/Countries/Countries';
 import VisualSection from '../../Components/VisualSecion/VisualSection';
 import Typewriter from 'typewriter-effect/dist/core';
+import InfiniteLoop from '../../Components/InfiniteLoop/InfiniteLoop';
 
 const Home = () => { 
  React.useEffect(() => {
@@ -32,7 +33,8 @@ const Home = () => {
    <Banner/>
    <TouristSpots/>
    <VisualSection/>                           
-   <Countries/>
+   <InfiniteLoop/>
+   <Countries/> 
   </div>
  );
 };

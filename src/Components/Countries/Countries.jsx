@@ -24,10 +24,8 @@ const Countries = () => {
   if (error) return <p className="text-center mt-10 text-red-500">{error}</p>;
 
   return (
-    <div className="min-h-screen px-4 py-8 mt-16">
-      <h1 className="text-center text-4xl font-changaOne uppercase md:text-6xl mb-12 font-bold text-white tracking-wide">
-        Explore Countries
-      </h1>
+    <div className="min-h-screen px-4 py-8 mt-36">
+    <h1 className="text-center text-white font-changaOne text-[22px] m-12 underline uppercase" >Explore Countries</h1>
 
       <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {loadingCountries.map(country => (

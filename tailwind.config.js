@@ -8,12 +8,12 @@ export default {
     extend: {
       fontFamily: {
         publicSans: ["Public Sans", "sans-serif"],
-        changaOne: ["Changa One", "sans -serif"]
+        changaOne: ["Changa One", "sans-serif"]
       },
       colors: {
         primary: ['#25343F']
       }
-    },
+    }
   },
   // eslint-disable-next-line no-undef
   plugins: [require('daisyui')],
