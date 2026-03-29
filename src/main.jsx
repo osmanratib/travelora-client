@@ -17,6 +17,7 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdatePlaces from './Pages/UpdatePlaces/UpdatePlaces';
 import Countries from './Components/Countries/Countries';
+import CountriesDetails from './Pages/CountriesDetails/CountriesDetails';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,12 @@ const router = createBrowserRouter([
       {
         path: '/countries',
         element: <Countries />
+      } , 
+      {
+        path: 'country/:countryName',   
+        element: <CountriesDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/places?countryName=${params.countryName}`)
       }
     ]
   },
