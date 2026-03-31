@@ -4,12 +4,13 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaBars } from "react-icons/fa";
 import { TbHomeFilled } from "react-icons/tb";
-import { MdPlace } from "react-icons/md"; 
+import { MdPlace } from "react-icons/md";
 import { CiViewList } from "react-icons/ci";
 
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -64,7 +65,7 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-               isActive ? "text-[#4963c9]" : "text-white"
+                isActive ? "text-[#4963c9]" : "text-white"
               }
             >
               <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Home</li>
@@ -77,9 +78,9 @@ const Navbar = () => {
                 isActive ? "text-[#4963c9]" : "text-white"
               }
             >
-              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <MdPlace/> Places</li>
+              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <MdPlace /> Places</li>
 
-            </NavLink> 
+            </NavLink>
 
             <NavLink
               to="/addTouristSpot"
@@ -89,7 +90,7 @@ const Navbar = () => {
             >
               <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Add places</li>
 
-            </NavLink> 
+            </NavLink>
 
             <NavLink
               to="/myList"
@@ -97,7 +98,7 @@ const Navbar = () => {
                 isActive ? "text-[#4963c9]" : "text-white"
               }
             >
-              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <CiViewList/> My List</li>
+              <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <CiViewList /> My List</li>
 
             </NavLink>
 
@@ -106,6 +107,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end hidden font-publicSans lg:flex gap-4 text-[13px] capitalize" >
+
           {
 
             user ? (

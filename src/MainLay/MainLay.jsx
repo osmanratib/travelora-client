@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 
 const MainLay = () => {
+ 
 
  useEffect(() => {
   const lenis = new Lenis({
@@ -22,6 +23,9 @@ const MainLay = () => {
 
   return () => lenis.destroy();
  }, []);
+ 
+
+
 
  return (
   <div className="bg-primary-0 text-gray-900">
