@@ -1,8 +1,8 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay, Mousewheel, Keyboard } from "swiper/modules";
+import { FaCircle, FaRegCircle, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const slides = [
   { title: "Rangamati", image: "/Images/BannerImages/rangamati.jpg" },
@@ -13,31 +13,82 @@ const slides = [
   { title: "Sajek Valley", image: "/Images/BannerImages/sajek.jpg" },
 ];
 
-export default function App() {
+export default function CustomSwiper() {
+  const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <Swiper
-      cssMode={true}
-      mousewheel={true}
-      autoplay={{ delay: 2500, disableOnInteraction: false }}
-      modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
-      className="mySwiper max-w-[1000px] mx-auto rounded-2xl"
-    >
-      {slides.map((slide, index) => (
-        <SwiperSlide
-          key={index}
-          style={{
-            background: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${slide.image}')`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            height: "500px",
-          }}
-        >
-          <div className="flex items-center justify-center h-full">
-            <span className="text-[100px] text-white font-changaOne">{slide.title}</span>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="relative max-w-[1200px] mx-auto">
+      <Swiper
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        mousewheel={true}
+        keyboard={true}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        modules={[Autoplay, Mousewheel, Keyboard]}
+        className="rounded-xl"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div
+              className="
+                w-full 
+                h-[250px] 
+                sm:h-[350px] 
+                md:h-[450px] 
+                lg:h-[500px] 
+                rounded-xl 
+                flex items-center justify-center
+              "
+              style={{
+                background: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${slide.image}')`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+              }}
+            >
+              <h1
+                className="
+                  text-white 
+                  font-changaOne 
+                  text-2xl 
+                  sm:text-4xl 
+                  md:text-6xl 
+                  lg:text-8xl 
+                  text-center
+                "
+              >
+                {slide.title}
+              </h1>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => swiperRef.current.slideTo(idx)}
+            className="text-white"
+          >
+            {activeIndex === idx ? <FaCircle size={12} /> : <FaRegCircle size={12} />}
+          </button>
+        ))}
+      </div>
+
+      <button
+        onClick={() => swiperRef.current.slidePrev()}
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white text-3xl z-10"
+      >
+        <FaArrowLeft />
+      </button>
+      <button
+        onClick={() => swiperRef.current.slideNext()}
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white text-3xl z-10"
+      >
+        <FaArrowRight />
+      </button>
+    </div>
   );
 }

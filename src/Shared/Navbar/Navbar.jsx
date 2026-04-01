@@ -44,12 +44,47 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li>Home</li>
-              <li>All Tourists Spot</li>
-              <li>Add Tourists Spot</li>
-              <li>My List</li>
-              <a className="btn">Login</a>
+              className="menu menu-sm dropdown-content bg-primary-0 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-[#4963c9]" : "text-white"
+                }
+              >
+                <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Home</li>
+
+              </NavLink>
+
+              <NavLink
+                to="/allTouristSpot"
+                className={({ isActive }) =>
+                  isActive ? "text-[#4963c9]" : "text-white"
+                }
+              >
+                <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <MdPlace /> Places</li>
+
+              </NavLink>
+
+              <NavLink
+                to="/addTouristSpot"
+                className={({ isActive }) =>
+                  isActive ? "text-[#4963c9]" : "text-white"
+                }
+              >
+                <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <TbHomeFilled /> Add places</li>
+
+              </NavLink>
+
+              <NavLink
+                to="/myList"
+                className={({ isActive }) =>
+                  isActive ? "text-[#4963c9]" : "text-white"
+                }
+              >
+                <li className='flex items-center gap-1 font-bold font-publicSans text-[13px]' > <CiViewList /> My List</li>
+
+              </NavLink>
+              <a className="btn m-5">Login</a>
               <a className="btn">Register</a>
             </ul>
           </div>
