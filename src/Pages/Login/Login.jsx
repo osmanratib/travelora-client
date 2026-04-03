@@ -1,123 +1,101 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import lottie from '../../../public/Images/Lottie/signup.json'
+import lottie from '../../../public/Images/Lottie/signup.json';
 import Lottie from 'lottie-react';
 import { FaBackward } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
+   const { login, loading } = useContext(AuthContext);
+   const navigate = useNavigate();
 
- const { login , loading} = useContext(AuthContext);
- const navigate = useNavigate(); 
+   const handleForm = (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
 
- const handleForm = (e) => {
-  e.preventDefault();
-  const form = e.target;
+      login(email, password)
+         .then(() => {
+            toast.success("Successfully logged in ✅", {
+               style: { backgroundColor: "#000", color: "#fff", borderRadius: "10px" },
+            });
+            form.reset();
+            navigate('/');
+         })
+         .catch(error => {
+            toast.error(error.message, {
+               style: { backgroundColor: "#000", color: "#fff", borderRadius: "10px" },
+            });
+         });
+   };
 
-  const email = form.email.value;
-  const password = form.password.value;
+   return loading ? (
+      <h1 className="text-center text-xl mt-20">Loading...</h1>
+   ) : (
+      <div className="p-5 min-h-screen flex flex-col items-center bg-gray-100">
+         <Toaster position="top-right" />
 
+         <Link to="/" className="self-start mb-5">
+            <button className="btn bg-primary-0 text-white flex items-center gap-2">
+               <FaBackward /> Back
+            </button>
+         </Link>
 
-  console.log(email, password)
-  const user = { email, password };
-  console.log(user);
+         <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl m-2 text-primary-0 font-changaOne uppercase">
+            Login
+         </h1>
 
+         <section className="flex flex-col lg:flex-row justify-center items-center gap-8 w-full max-w-[1200px] mt-5">
+            <form
+               onSubmit={handleForm}
+               className="flex-1 bg-primary-0 p-6 sm:p-10 rounded-xl flex flex-col gap-5 w-full max-w-md"
+            >
+               <div className="flex flex-col gap-4">
+                  <label className="text-white font-bold font-publicSans text-[16px]">
+                     Your Email
+                  </label>
+                  <input
+                     type="email"
+                     name="email"
+                     required
+                     placeholder="email@gmail.com"
+                     className="outline-none px-4 py-2 bg-[#526a6e] rounded-xl text-white w-full"
+                  />
+               </div>
 
-  login(email, password)
-   .then(res => {
-    console.log(res)
-    toast("successfully login ✅",
-     {
-      style: {
-       backgroundColor: "#000",
-       borderRadius: "10px",
-       width: "700px",
-       color: "#fff"
-      },
-     }
-    ) 
-   
-    form.reset() 
-    navigate('/')
+               <div className="flex flex-col gap-4">
+                  <label className="text-white font-bold font-publicSans text-[16px]">
+                     Password
+                  </label>
+                  <input
+                     type="password"
+                     name="password"
+                     required
+                     placeholder="password"
+                     className="outline-none px-4 py-2 bg-[#526a6e] rounded-xl text-white w-full"
+                  />
+               </div>
 
-   })
-   .catch(error => {
-    console.error(error)
-   })
+               <button className="bg-white text-black py-3 rounded-xl font-bold uppercase mt-4">
+                  Login
+               </button>
 
+               <p className="text-white font-publicSans text-center mt-4">
+                  Not registered yet?{' '}
+                  <Link to="/register" className="underline">
+                     Register
+                  </Link>
+               </p>
+            </form>
 
- }
-
-
-
- return (
-    loading? (
-     <h1>loading</h1>
-    ) : (
-    <div className='p-5'>
-     <Toaster
-      position='right-top'
-     />
-     <Link to={'/'} ><button className='btn bg-primary-0 text-white ' ><FaBackward />back</button></Link>
-
-     <h1 className='text-center  text-[40px] m-2 text-primary-0 font-changaOne uppercase ' >Login</h1>
-     <section className=' flex justify-center   mt-5  '  >
-      <div className="w-[1000px] h-[600px] border bg-primary-0 rounded-xl flex justify-center gap-16 pt-16 items-center">
-
-       <form onSubmit={handleForm} >
-
-        <div className='space-y-5 ' >
-
-
-         <div className=" email flex items-center gap-4  bg-[#526a6e] p-2 rounded-xl ">
-          <h1 className='text-white font-bold font-publicSans text-[16px] mt-4' >Your email </h1>
-          <input type="email"
-           name='email'
-           required
-           placeholder='email@gmail.com'
-           className='outline-none px-7 py-2 bg-transparent border-b-2 text-white'
-          />
-         </div>
-
-         <div className=" password flex items-center gap-4  bg-[#526a6e] p-2 rounded-xl ">
-          <h1 className='text-white font-bold font-publicSans text-[16px] mt-4' > password </h1>
-          <input type="password"
-           name='password'
-           required
-           placeholder='password'
-           className='outline-none px-7 py-2 bg-transparent border-b-2 text-white'
-          />
-         </div>
-
-
-
-         <button className='bg-white w-[400px] p-3 rounded-xl font-publicSans font-bold uppercase btn '  >Login</button>
-
-
-         <div>
-          <h1 className='text-white font-publicSans ' >Not create any account  ? <Link to={'/register'} className='underline' >register</Link></h1>
-         </div>
-
-        </div>
-
-
-       </form>
-
-
-       <div className="lottie w-[300px] h-[300px]">
-        <Lottie animationData={lottie} ></Lottie>
-       </div>
-
-
+            <div className="flex-1 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+               <Lottie animationData={lottie} loop={true} />
+            </div>
+         </section>
       </div>
-
-
-
-     </section>
-    </div>
-    )
- );
+   );
 };
 
 export default Login;
