@@ -8,7 +8,7 @@ const Countries = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/countries')
+    fetch('https://travelora-server.vercel.app/countries')
       .then(res => res.json())
       .then(data => {
         setLoadingCountries(data);

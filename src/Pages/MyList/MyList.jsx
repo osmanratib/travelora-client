@@ -15,7 +15,7 @@ const MyList = () => {
     if (!user?.email) return;
 
     setLoading(true);
-    fetch(`http://localhost:5000/myPlaces?email=${user.email}`)
+    fetch(`https://travelora-server.vercel.app/myPlaces?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setPlaces(data);
@@ -37,7 +37,7 @@ const MyList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         setDeletingId(id);
-        fetch(`http://localhost:5000/places/${id}`, {
+        fetch(`https://travelora-server.vercel.app/places/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -24,7 +24,7 @@ const AddTouristsSpot = () => {
       username: user?.displayName,
     };
 
-    fetch('http://localhost:5000/places', {
+    fetch('https://travelora-server.vercel.app/places', {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(spot)
@@ -49,12 +49,12 @@ const AddTouristsSpot = () => {
         className="w-full max-w-6xl backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-6 md:p-10 shadow-2xl
                    grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-     
+
         <h1 className="col-span-full text-center text-white text-2xl md:text-3xl font-bold tracking-wide">
           Add Tourist Spot
         </h1>
 
-        
+
         <div className="col-span-full flex flex-col gap-3">
           <input
             name="image"
@@ -97,7 +97,7 @@ const AddTouristsSpot = () => {
           </div>
         ))}
 
-      
+
         <div className="relative">
           <select
             name="seasonality"
