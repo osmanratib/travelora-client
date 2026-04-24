@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
-import MainLay from './MainLay/Mainlay';
+// import MainLay from './MainLay/Mainlay';
 import Home from './Pages/Home/Home';
 import AllTouristsSpot from './Pages/AllTouristsSpot/AllTouristsSpot';
 import AddTouristsSpot from './Pages/AddTouristsSpot/AddTouristsSpot';
@@ -18,6 +18,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdatePlaces from './Pages/UpdatePlaces/UpdatePlaces';
 import Countries from './Components/Countries/Countries';
 import CountriesDetails from './Pages/CountriesDetails/CountriesDetails';
+import MainLay from './MainLay/MainLay';
 
 const router = createBrowserRouter([
   {
