@@ -24,7 +24,7 @@ const AddTouristsSpot = () => {
       username: user?.displayName,
     };
 
-    fetch('https://travelora-server.vercel.app/places', {
+    fetch('https://travelora-server-x2zq.onrender.com/places', {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(spot)

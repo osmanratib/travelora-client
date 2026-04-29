@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: () => fetch('https://travelora-server.vercel.app/places')
+        loader: () => fetch('https://travelora-server-x2zq.onrender.com/places')
       },
       {
         path: '/allTouristSpot',
         element: <AllTouristsSpot />,
-        loader: () => fetch('https://travelora-server.vercel.app/places')
+        loader: () => fetch('https://travelora-server-x2zq.onrender.com/places')
       },
       {
         path: '/addTouristSpot',
@@ -52,14 +52,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <UpdatePlaces />
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`https://travelora-server.vercel.app/places/${params.id}`)
+        loader: ({ params }) => fetch(`https://travelora-server-x2zq.onrender.com/places/${params.id}`)
       },
       {
         path: "places/:id",
         element: <PrivateRoute>
           <PlaceDetails />
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`https://travelora-server.vercel.app/places/${params.id}`)
+        loader: ({ params }) => fetch(`https://travelora-server-x2zq.onrender.com/places/${params.id}`)
       },
       {
         path: '/countries',
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         path: 'country/:countryName',
         element: <CountriesDetails />,
         loader: ({ params }) =>
-          fetch(`https://travelora-server.vercel.app/places?countryName=${params.countryName}`)
+          fetch(`https://travelora-server-x2zq.onrender.com/places?countryName=${params.countryName}`)
       }
     ]
   },

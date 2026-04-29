@@ -34,7 +34,7 @@ const UpdatePlaces = () => {
       totalVisitorsPerYear: form.totalVisitorsPerYear.value,
     };
 
-    fetch(`https://travelora-server.vercel.app/places/${loadingPlaces._id}`, {
+    fetch(`https://travelora-server-x2zq.onrender.com/places/${loadingPlaces._id}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(updateSpot),
